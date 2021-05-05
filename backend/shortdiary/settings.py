@@ -79,11 +79,6 @@ STATICFILES_FINDERS = (
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = 'this-is-not-the-production-key'
 
-# Legacy middlewares, need to migrate
-MIDDLEWARE_CLASSES = (
-	'diary.middleware.TrackLastActivityMiddleware'
-)
-
 CORS_ALLOW_ALL_ORIGINS = True
 
 MIDDLEWARE = (
@@ -97,6 +92,7 @@ MIDDLEWARE = (
 	'two_factor.middleware.threadlocals.ThreadLocals',
 	'django_otp.middleware.OTPMiddleware',
 	'django.contrib.messages.middleware.MessageMiddleware',
+	'diary.middleware.TrackLastActivityMiddleware'
 )
 
 ROOT_URLCONF = 'shortdiary.urls'
